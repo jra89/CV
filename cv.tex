@@ -1,0 +1,324 @@
+%------------------------------------------------------------------------------
+% CV in Latex
+% Author : Charles Rambo
+% Based off of: https://github.com/sb2nov/resume and Jake's Resume on Overleaf
+% Most recently updated version may be found at https://github.com/fizixmastr 
+% License : MIT
+%------------------------------------------------------------------------------
+
+\documentclass[A4,11pt]{article}
+%\documentclass[letterpaper,11pt]{article} %For use in US
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{tikz}
+\input{glyphtounicode}
+
+\begin{comment}
+I am by no means a professional when it comes to the CV's/resumes, I have
+received various trainings on how to write a CV and resume from my high 
+school, as well as the Austin College and University of Eastern Finland's
+career counseling departments. As I intend to share my CV as a template, I 
+feel that it is my responsibility to provide explanations of my work.
+\end{comment}
+
+
+%-----FONT OPTIONS-------------------------------------------------------------
+\begin{comment}
+The font of the document will impact not just how readable it is, but how it is
+perceived. In the "The Craft of Scientific Writing" by Michael Alley, shares a
+common fonts for publication as well as their use. I have chosen to use
+Palatino for its legibility, some others are given below. There is far too much
+about typography to discus here. Note: serif fonts have short projecting
+strokes, sans-serif fonts are sans (without) these strokes.
+\end{comment}
+
+
+% serif
+ \usepackage{palatino}
+% \usepackage{times} %This is the default as well
+% \usepackage{charter}
+
+% sans-serif
+% \usepackage{helvet}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+%-----PAGE SETUP---------------------------------------------------------------
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-1cm}
+\addtolength{\evensidemargin}{-1cm}
+\addtolength{\textwidth}{2cm}
+\addtolength{\topmargin}{-1cm}
+\addtolength{\textheight}{2cm}
+
+% Margins for US Letter size
+%\addtolength{\oddsidemargin}{-0.5in}
+%\addtolength{\evensidemargin}{-0.5in}
+%\addtolength{\textwidth}{1in}
+%\addtolength{\topmargin}{-.5in}
+%\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0cm}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that .pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-----CUSTOM COMMANDS FOR FORMATTING SECTIONS----------------------------------
+\newcommand{\CVItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\CVSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small#3 & \small #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \text{\small#1} & \text{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubItem}[1]{\CVItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\CVSubHeadingListStart}{\begin{itemize}[leftmargin=0.5cm, label={}]}
+% \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]} % Uncomment for US
+\newcommand{\CVSubHeadingListEnd}{\end{itemize}}
+\newcommand{\CVItemListStart}{\begin{itemize}}
+\newcommand{\CVItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%------------------------------------------------------------------------------
+% CV STARTS HERE  %
+%------------------------------------------------------------------------------
+\begin{document}
+
+%-----HEADING------------------------------------------------------------------
+\begin{comment}
+In Europe it is common to include a picture of ones self in the CV. Select
+which heading appropriate for the document you are creating.
+\end{comment}
+
+\begin{minipage}[c]{0.05\textwidth}
+\-\
+\end{minipage}
+\begin{minipage}[c]{0.2\textwidth}
+\begin{tikzpicture}
+    
+    \node at (0,-.7) {\includegraphics[width = 3cm]{profile}}; 
+    % if necessary the picture may be moved by changing the at (coordinates)
+    % width defines the 'zoom' of the picture
+\end{tikzpicture}
+\hfill\vline\hfill
+\end{minipage}
+\begin{minipage}[c]{0.4\textwidth}
+    \textbf{\Large \scshape{Jinny Ramsmark}} \\ \vspace{1pt} 
+    % \scshape sets small capital letters, remove if desired
+    \small{+46 70 420 32 52} \\
+    \href{mailto:jinny@defensify.se}{\underline{jinny@defensify.se}}\\
+    % Be sure to use a professional *personal* email address
+    \href{https://www.linkedin.com/in/jinnyramsmark/}{\underline{linkedin.com/in/jinnyramsmark/}} \\
+    % you should adjust you linked in profile name to be professional and recognizable
+    \href{https://github.com/jra89}{\underline{github.com/jra89}}
+\end{minipage}
+
+% Without picture
+%\begin{center}
+%    \textbf{\Huge \scshape Charles Rambo} \\ \vspace{1pt} %\scshape sets small capital letters, remove if desired
+%    \small +1 123-456-7890 $|$ 
+%    \href{mailto:you@provider.com}{\underline{you@provider.com}} $|$\\
+%    % Be sure to use a professional *personal* email address
+%    \href{https://linkedin.com/in/your-name-here}{\underline{linkedin.com/in/charles-rambo}} $|$
+%    % you should adjust you linked in profile name to be professional and recognizable
+%    \href{https://github.com/fizixmastr}{\underline{github.com/fizixmastr}}
+%\end{center}
+
+
+
+\begin{comment}
+This CV was written for specifically for positions I was applying for in
+academia, and then modified to be a template.
+
+A standard CV is about two pages long where as a resume in the US is one page.
+sections can be added and removed here with this in mind. In my experience, 
+education, and applicable work experience and skills are the most import things
+to include on a resume. For a CV the Europass CV suggests the categories: Work
+Experience, Education and Training, Language Skills, Digital Skills,
+Communication and Interpersonal Skills, Conferences and Seminars, Creative Works
+Driver's License, Hobbies and Interests, Honors and Awards, Management and
+Leadership Skills, Networks and Memberships, Organizational Skills, Projects,
+Publications, Recommendations, Social and Political Activities, Volunteering.
+
+Your goal is to convey a who, what , when, where, why for every item you share. 
+The who is obviously you, but I believe the rest should be done in that order.
+For example below. An employer cares most about the degree held and typically 
+less about the institution or where it is located (This is still good 
+information though). Whatever order you choose be consistent throughout.
+\end{comment}
+
+%-----EDUCATION----------------------------------------------------------------
+\section{Education}
+  \CVSubHeadingListStart
+%    \CVSubheading % Example
+%      {Degree Achieved}{Years of Study}
+%      {Institution of Study}{Where it is located}
+    \CVSubheading
+      {{OSCP Course}}{2019 - 2019}
+      {Offensive Security Online Course}{Malmö, Sweden}
+    \CVSubheading
+      {{Bachelor of Science in Software Engineering $|$ \emph{\small{Computer Science}}}}{2008 -- 2011}
+      {Blekinge Tekniska Högskola}{Karlskrona, Sweden}
+    \CVSubheading
+      {{Exchange program $|$ \emph{\small{Computer Scienve}}}}{2010 -- 2010}
+      {Georgia Tech}{Atlanta, USA}
+    \CVSubheading
+      {Electrical/Computing program}{2005 -- 2008}
+      {Parkskolan}{Ystad, Sweden}
+  \CVSubHeadingListEnd
+
+%-----WORK EXPERIENCE----------------------------------------------------------
+\begin{comment}
+try to briefly explain what you did and why it is relevant to the position you
+are seeking
+\end{comment}
+
+\section{Work Experience}
+  \CVSubHeadingListStart
+%    \CVSubheading %Example
+%      {What you did}{When you worked there}
+%      {Who you worked for}{Where they are located}
+%      \CVItemListStart
+%        \CVItem{Why it is important to this employer}
+%      \CVItemListEnd
+    \CVSubheading
+      {Senior Security Consultant}{Oct 2019 -- Present}
+      {Defensify}{Malmö, Sweden}
+      \CVItemListStart
+        \CVItem{Perform both external and internal security review of networks and systems}
+        \CVItem{Code review in multiple languages (i.e C\#, C, C++, Java, PHP, Python, Perl)}
+        \CVItem{Internet exposure analysis of individuals and organisations}
+      \CVItemListEnd
+    \CVSubheading
+      {Software Engineer}{Aug 2018 -- Oct 2019}
+      {CoolStuff}{Malmö, Sweden}
+      \CVItemListStart
+        \CVItem{Lead developer for the legacy systems}
+        \CVItem{Data protection officer}
+    \CVItemListEnd
+    \CVSubheading
+      {Software Engineer}{Dec 2017 -- Aug 2018}
+      {One Agency}{Malmö, Sweden}
+      \CVItemListStart
+        \CVItem{Consulted several customers in C\#, Visual Basic, and PHP}
+        \CVItem{Went on training camps to better social interactions and conflict management}
+      \CVItemListEnd
+    \CVSubheading
+      {Security Consultant}{Jan 2014 -- Jun 2017}
+      {Truesec}{Malmö, Sweden}
+      \CVItemListStart
+        \CVItem{Performed both external and internal security review of networks and systems}
+        \CVItem{Performed hundreds of security assessments}
+        \CVItem{Code review in multiple languages (i.e C\#, C, C++, Java, PHP, Python, Perl)}
+      \CVItemListEnd
+    \CVSubheading
+      {Software Engineer}{Jun 2011 -- Jan 2014}
+      {Avalon Innovation}{Malmö, Sweden}
+      \CVItemListStart
+        \CVItem{Developed systems for E-commerce customers}
+        \CVItem{Researched software security and released articles on these topics}
+      \CVItemListEnd
+  \CVSubHeadingListEnd
+
+%-----PROJECTS AND RESEARCH----------------------------------------------------
+\begin{comment}
+Ideally the title of the work should speak for what it is. However if you feel
+like you should explain more about why the project is applicable to this job,
+use item list as is shown in the work experience section.
+\end{comment}
+
+\section{Projects and Research}
+  \CVSubHeadingListStart
+%    \CVSubheading
+%      {Title of Work}{When it was done}
+%      {Institution you worked with}{unused}
+    \CVSubheading
+      {{LimeSurvey downgrade attack} $|$ \emph{\small{PHP}}}{Spring 2020}
+      {\url{https://medium.com/@jra8908/limesurvey-downgrade-attack-4d5b0855fea1}}{}
+    \CVSubheading
+      {{YetiShare 3.5.2 - 4.5.4 Multiple vulnerabilities} $|$ \emph{\small{PHP}}}{Spring 2020}
+      {\url{https://medium.com/@jra8908/yetishare-3-5-2-4-5-4-multiple-vulnerabilities-927d17b71ad/}}{}
+    \CVSubheading
+      {Chevereto  1.1.4 Free,  3.13.5 Core, Multiple vulnerabilities $|$ \emph{\small{PHP}}}{Spring 2020}
+      {\url{https://medium.com/@jra8908/chevereto-1-1-4-free-3-13-5-core-multiple-vulnerabilities-c965b88ad5e9}}{}
+    \CVSubheading
+      {{YetiShare 3.5.2 - 4.5.3, Multiple vulnerabilities} $|$ \emph{\small{PHP}}}{Spring 2019}
+      {\url{https://medium.com/@jra8908/yetishare-3-5-2-4-5-3-multiple-vulnerabilities-2d01d0cd7459}}{}
+    \CVSubheading
+      {CVE-2019-19634 (Arbitrary file upload in class.upload.php)}{Winter 2019}
+      {\url{https://medium.com/@jra8908/cve-2019-19634-arbitrary-file-upload-in-class-upload-php-ccaf9e13875e}}{}
+    \CVSubheading
+      {CVE-2019-19576 (Arbitrary file upload in class.upload.php)}{Winter 2019}
+      {\url{https://medium.com/@jra8908/cve-2019-19576-e9da712b779}}{}
+    \CVSubheading
+      {{PHP tmp file inclusion} $|$ \emph{\small{PHP}}}{Fall 2016}
+      {\url{https://github.com/jra89/php-tmpfile-inclusion}}{}
+  \CVSubHeadingListEnd
+
+%-----CONFERENCES AND PRESENTATIONS--------------------------------------------
+\begin{comment}
+Again the title should have already been enough, but if it is necessary to add
+descriptions maintain the consistency from prior sections
+\end{comment}
+
+\section{Conferences and Presentations}
+  \CVSubHeadingListStart
+%    \CVSubheading % Example
+%      {Work Presented}{When}
+%      {Occasion}{}
+    \CVSubheading
+      {Power of phishing}{November 2016}
+      {Rival, Stockholm}{}
+  \CVSubHeadingListEnd
+
+%-----SKILLS-------------------------------------------------------------------
+\begin{comment}
+This section is compressed from the various skills sections that Euro CV
+recommends.
+\end{comment}
+
+\section{Skills}
+ \begin{itemize}[leftmargin=0.5cm, label={}]
+    \small{\item{
+     \textbf{Languages}{: Swedish (Native), English (Fluent)} \\
+     \textbf{Programming}{: Python, C\#, Java, C, C++, PHP} \\
+     \textbf{Other}{: Maltego, Metasploit, CobaltStrike, Burp Suite Pro} \\
+    }}
+ \end{itemize}
+    
+%------------------------------------------------------------------------------
+\end{document}
